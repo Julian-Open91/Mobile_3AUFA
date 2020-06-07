@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -23,12 +26,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         public TextView txtHeader;
         public TextView txtFooter;
         public View layout;
+        public ImageView image ;
 
         public ViewHolder(View v) {
             super(v);
             layout = v;
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
+            image = v.findViewById(R.id.icon);
         }
     }
 
@@ -68,7 +73,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         // - replace the contents of the view with that element
         final Character currentCharacter = values.get(position);
         holder.txtHeader.setText(currentCharacter.getName());
-        holder.txtFooter.setText(currentCharacter.getUrl());
+        holder.txtFooter.setText(currentCharacter.getSpecies());
+        Glide.with(holder.itemView.getContext()).load(currentCharacter.getImage()).into(holder.image);
+
 
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
