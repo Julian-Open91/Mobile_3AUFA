@@ -6,6 +6,7 @@ public class Character {
     private String url;
     private String species;
     private String status;
+    private String image;
 
     public String getName() {
         return name;
@@ -21,5 +22,8 @@ public class Character {
 
     public String getStatus() {
         return status;
+    }
+    public String getImage() {
+        return image;
     }
 }
