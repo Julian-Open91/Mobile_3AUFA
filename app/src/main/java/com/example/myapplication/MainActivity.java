@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
         List<Character> characterList = getDataFromCache();
 
-        //if(characterList != null){
-            //showList(characterList);
-        //} else {
+        if(characterList != null){
+            showList(characterList);
+        } else {
             makeApiCall();
-        //}
+        }
     }
 
     private List<Character> getDataFromCache() {

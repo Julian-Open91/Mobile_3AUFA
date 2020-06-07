@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 public class SecondActivity extends AppCompatActivity {
 
     TextView name, status, species;
+    ImageView avatar;
     public String data_name, data_status, data_species;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
