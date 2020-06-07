@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
-    private List<Pokemon> values;
+    private List<Character> values;
+    private Context c;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -29,7 +32,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         }
     }
 
-    public void add(int position, Pokemon item) {
+    public void add(int position, Character item) {
         values.add(position, item);
         notifyItemInserted(position);
     }
@@ -40,8 +43,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListAdapter(List<Pokemon> myDataset) {
+    public ListAdapter(List<Character> myDataset, Context activity) {
         values = myDataset;
+        c = activity;
     }
 
     // Create new views (invoked by the layout manager)
@@ -62,9 +66,22 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final Pokemon currentPokemon = values.get(position);
-        holder.txtHeader.setText(currentPokemon.getName());
-        holder.txtFooter.setText(currentPokemon.getUrl());
+        final Character currentCharacter = values.get(position);
+        holder.txtHeader.setText(currentCharacter.getName());
+        holder.txtFooter.setText(currentCharacter.getUrl());
+
+        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //openNewActivity();
+                Intent intent = new Intent(c, InfoCharacter.class);
+                intent.putExtra("name", currentCharacter.getName());
+                intent.putExtra("species", currentCharacter.getSpecies());
+                intent.putExtra("status", currentCharacter.getStatus());
+
+                c.startActivity(intent);
+            }
+        });
     }
 
     // Return the size of your dataset (invoked by the layout manager)

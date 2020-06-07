@@ -1,11 +1,12 @@
 package com.example.myapplication;
 
-import java.util.List;
+        import java.util.List;
 
-public class RestPokemonResponse {
+public class RestRickandmortyResponse {
     private int count;
+    private int page;
     private String next;
-    private List<Pokemon> results;
+    private List<Character> results;
 
     public int getCount() {
         return count;
@@ -15,7 +16,7 @@ public class RestPokemonResponse {
         return next;
     }
 
-    public List<Pokemon> getResults() {
+    public List<Character> getResults() {
         return results;
     }
 }
