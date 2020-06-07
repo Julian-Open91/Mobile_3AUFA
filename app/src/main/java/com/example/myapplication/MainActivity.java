@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ListAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private static final String BASE_URL = "https://rickandmortyapi.com/";
+    private static final String BASE_URL = "https://raw.githubusercontent.com/Julian-Open91/Mobile_3AUFA/API_for_image/app/src/main/java/com/example/myapplication/";
     private SharedPreferences sharedPreferences ;
     private Gson gson;
 
@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
         List<Character> characterList = getDataFromCache();
 
-        if(characterList != null){
-            showList(characterList);
-        } else {
+        //if(characterList != null){
+            //showList(characterList);
+        //} else {
             makeApiCall();
-        }
+        //}
     }
 
     private List<Character> getDataFromCache() {
