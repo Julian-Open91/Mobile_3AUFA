@@ -4,25 +4,18 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ListAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private static final String BASE_URL = "https://pokeapi.co/";
+    private static final String BASE_URL = "https://rickandmortyapi.com/";
     private SharedPreferences sharedPreferences ;
     private Gson gson;
 
@@ -50,30 +43,30 @@ public class MainActivity extends AppCompatActivity {
                 .setLenient()
                 .create();
 
-        List<Pokemon> pokemonList = getDataFromCache();
+        List<Character> characterList = getDataFromCache();
 
-        if(pokemonList != null){
-            showList(pokemonList);
+        if(characterList != null){
+            showList(characterList);
         } else {
             makeApiCall();
         }
     }
 
-    private List<Pokemon> getDataFromCache() {
+    private List<Character> getDataFromCache() {
 
-            String jsonPokemon = sharedPreferences.getString(Constants.KEY_POKEMON_LIST, null);
+            String jsonRickandmorty = sharedPreferences.getString(Constants.KEY_RICKANDMORTY_LIST, null);
 
-            if(jsonPokemon == null){
+            if(jsonRickandmorty == null){
                 return null;
             } else {
-                Type listType = new TypeToken<List<Pokemon>>(){}.getType();
-                return gson.fromJson(jsonPokemon, listType);
+                Type listType = new TypeToken<List<Character>>(){}.getType();
+                return gson.fromJson(jsonRickandmorty, listType);
 
             }
 
     }
 
-    private void showList(List<Pokemon> pokemonList) {
+    private void showList(List<Character> characterList) {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         final SwipeRefreshLayout swiperefresh = findViewById(R.id.swiperefresh);
         swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -86,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new ListAdapter(pokemonList);
+        mAdapter = new ListAdapter(characterList, MainActivity.this);
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -98,17 +91,17 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        PokeApi pokeAPI = retrofit.create(PokeApi.class);
+        RickApi rickAPI = retrofit.create(RickApi.class);
 
-        Call<RestPokemonResponse> call = pokeAPI.GetPokemonResponse();
-        call.enqueue(new Callback<RestPokemonResponse>() {
+        Call<RestRickandmortyResponse> call = rickAPI.GetRickandmortyResponse();
+        call.enqueue(new Callback<RestRickandmortyResponse>() {
             @Override
-            public void onResponse(Call<RestPokemonResponse> call, Response<RestPokemonResponse> response) {
+            public void onResponse(Call<RestRickandmortyResponse> call, Response<RestRickandmortyResponse> response) {
                 if(response.isSuccessful() && response.body() != null){
-                    List<Pokemon> pokemonList = response.body().getResults();
+                    List<Character> characterList = response.body().getResults();
                     Toast.makeText(getApplicationContext(), "API Success", Toast.LENGTH_SHORT).show();
-                    saveList(pokemonList); 
-                    showList(pokemonList);
+                    saveList(characterList);
+                    showList(characterList);
                 }
                 else {
                     showError();
@@ -116,17 +109,17 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<RestPokemonResponse> call, Throwable t) {
+            public void onFailure(Call<RestRickandmortyResponse> call, Throwable t) {
                 showError();
             }
         });
     }
 
-    private void saveList(List<Pokemon> pokemonList) {
-        String jsonString = gson.toJson(pokemonList);
+    private void saveList(List<Character> characterList) {
+        String jsonString = gson.toJson(characterList);
         sharedPreferences
                 .edit()
-                .putString(Constants.KEY_POKEMON_LIST, jsonString)
+                .putString(Constants.KEY_RICKANDMORTY_LIST, jsonString)
                 .apply();
         Toast.makeText(getApplicationContext(), "List saved", Toast.LENGTH_SHORT).show();
     }

@@ -1,5 +1,5 @@
 package com.example.myapplication;
 
 public class Constants {
-    static String KEY_POKEMON_LIST = "jsonPokemonList";
+    static String KEY_RICKANDMORTY_LIST = "jsonjsonRickandmortyList";
 }
