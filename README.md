@@ -29,7 +29,9 @@ https://github.com/Fronter07/MyApplication/champion.json
 
 Affichage de la liste des personnages du jeu
 
-<img width="320" alt="Capture d’écran 2020-06-07 à 22 45 26" src="https://user-images.githubusercontent.com/62753715/83980026-ae7aa480-a912-11ea-9a3c-715b74cdee92.png">
+[
+![image](https://user-images.githubusercontent.com/62753718/83982968-f1e10d00-a92a-11ea-86de-f63e0e1ce01f.png)
+](url)
 
 
 ### Deuxieme Ecran 
