@@ -74,7 +74,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 //openNewActivity();
-                Intent intent = new Intent(c, InfoCharacter.class);
+                Intent intent = new Intent(c, SecondActivity.class);
                 intent.putExtra("name", currentCharacter.getName());
                 intent.putExtra("species", currentCharacter.getSpecies());
                 intent.putExtra("status", currentCharacter.getStatus());
