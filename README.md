@@ -1,10 +1,10 @@
 # Mobile_3AUFA
 
-Je suis un joueur très fréquent du jeu vidéo League Of Legends. C'est un jeu très compliqué stratégiquement parlant car il demande une grande connaissance des personnages présent dans le jeu ainsi que de l'environnement dans lequel ces personnages évoluent. Des camarades à moi m'ont demandé il y a peu de les "initier" au jeu pour qu'ils puissent s'améliorer plus rapidement. C'est pour cette raison que j'ai l'idée de créer cette application, en leurs permettant d'avoir des informations rapidement sur leur personnage ainsi que le personnage adverse et donc adopter une manière de jouer adéquate contre celui-ci.
+Depuis mon plus jeune âge et comme beaucoup de personnes à peu près normales sur cette planète Terre, j'ai regardé enéormément de dessins-animés. Cependnt, depusi un certain temps, je ne m'étais pas rélement réintéressé à ce style. C'est avec l'aparition de Rick et Morty que j'ai repris réellement un engoument pour ces petits personnages 2D. 
 
 ## Présentation du Projet
 
-Cette application affiche la liste des champions disponible dans le jeu en utilisant une API que j'ai créer moi-même "champion.json"
+L'application suivante affiche certains personnages présents dans la série Rick et Morty utilisant une API que j'ai du recréer moi-même à cause d'un problème d'image. Cette API est le fichier RickandMorty.json. 
 
 ### Prérequis
 
@@ -17,17 +17,20 @@ https://github.com/Fronter07/MyApplication/champion.json
 
 ### Consignes respectées
 
-* Ecran avec une liste d'éléments
-* Ecran avec le détail d'un élément
-* Appel Webservice à une API Rest
+* Mise en place Gitflow
 * Stockage de données en cache
-* Gitflow
+* Appel à une API Rest
+* Premier écran affichant une liste d'éléments
+* Deuxième écran affichant la description d'un élément
+* Design 
+
+
 
 ## Fonctionnalités
 
 ### Premier Ecran
 
-Affichage de la liste des personnages du jeu
+Il affichage de la liste des personnages présents dans la série Rick et Morty.
 
 [
 ![image](https://user-images.githubusercontent.com/62753718/83982968-f1e10d00-a92a-11ea-86de-f63e0e1ce01f.png)
@@ -36,9 +39,12 @@ Affichage de la liste des personnages du jeu
 
 ### Deuxieme Ecran 
 
-Explicatif du personnage selectionné avec son niveau de jouabilité (difficulté) ainsi que ses compétances
+Il affiche la description du personnage choisi en montrant son statut (vivant ou non), ainsi que son espèce et son nom. 
 
-<img width="320" alt="Capture d’écran 2020-06-07 à 22 46 11" src="https://user-images.githubusercontent.com/62753715/83980031-b4708580-a912-11ea-8f3d-f80371c6243c.png">
+[
+![image](https://user-images.githubusercontent.com/62753718/83983002-2ead0400-a92b-11ea-8b2f-aaefbea1eb0f.png)
+](url)
 
+### Premier Ecran 
 
-* PS : Je rempli les caractéritsiques des 20 premiers personnages
+Il n'affiche rien car je n'ai pas eu le temps de fixer les problèmes mais je voulais que l'on puisse sélectionner deux personnages et que l'on compare sur le fait que les deux soient en vie. 
