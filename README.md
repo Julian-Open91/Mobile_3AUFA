@@ -12,7 +12,7 @@ L'application suivante affiche certains personnages présents dans la série Ric
 * Récupérer une API Rest
 
 ```
-https://github.com/Fronter07/MyApplication/champion.json
+https://raw.githubusercontent.com/Julian-Open91/Mobile_3AUFA/API_for_image/app/src/main/java/com/example/myapplication/RickandMorty.json
 ```
 
 ### Consignes respectées
