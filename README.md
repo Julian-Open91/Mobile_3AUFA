@@ -40,7 +40,7 @@ Il affichage de la liste des personnages présents dans la série Rick et Morty.
 ### Deuxieme Ecran 
 
 Il affiche la description du personnage choisi en montrant son statut (vivant ou non), ainsi que son espèce et son nom. 
-On peut sélectionner deux personnage pour une comparaison à l'aide des deux boutons situés en dessous. 
+On peut sélectionner deux personnage pour une comparaison à l'aide des deux boutons situés en dessous (la comparaison ne fonctionne pas). 
 
 [
 ![image](https://user-images.githubusercontent.com/62753718/83983002-2ead0400-a92b-11ea-8b2f-aaefbea1eb0f.png)
