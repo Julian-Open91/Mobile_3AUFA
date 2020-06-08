@@ -1,10 +1,10 @@
 # Mobile_3AUFA
 
-Depuis mon plus jeune âge et comme beaucoup de personnes à peu près normales sur cette planète Terre, j'ai regardé enéormément de dessins-animés. Cependnt, depusi un certain temps, je ne m'étais pas rélement réintéressé à ce style. C'est avec l'aparition de Rick et Morty que j'ai repris réellement un engoument pour ces petits personnages 2D. 
+Depuis mon plus jeune âge et comme beaucoup de personnes à peu près normales sur cette planète Terre, j'ai regardé énormément de dessins-animés. Cependant, depuis un certain temps, je ne m'étais pas réellement réintéressé à ce style. C'est avec l'apparition de Rick et Morty que j'ai reprit un engoument pour ces petits personnages 2D. 
 
 ## Présentation du Projet
 
-L'application suivante affiche certains personnages présents dans la série Rick et Morty utilisant une API que j'ai du recréer moi-même à cause d'un problème d'image. Cette API est le fichier RickandMorty.json. 
+L'application suivante affiche certains personnages présents dans la série Rick et Morty en utilisant une API que j'ai du recréer moi-même à cause d'un problème d'image. Cette API est le fichier RickandMorty.json. 
 
 ### Prérequis
 
